@@ -1,0 +1,69 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "properties": {
+        "sku": "abc456",
+        "cost": 1200,
+        "name": "JBL T450BT Extra Bass Bluetooth Headset",
+        "brand": "JBL",
+        "type": "On the ear",
+        "Noise Cancellation": "yes",
+        "rating": 3.5,
+        "color": "red"
+      }
+    },
+    {
+      "id": 2,
+      "properties": {
+        "sku": "abc787",
+        "cost": 1000,
+        "name": "Boult Audio Thunder Bluetooth Headset  (Black, On the Ear),        ",
+        "brand": "Boult",
+        "type": "On the ear",
+        "Noise Cancellation": "no",
+        "rating": 3.2,
+        "color": "black"
+      }
+    },
+    {
+      "id": 3,
+      "properties": {
+        "sku": "xyz223",
+        "cost": 899,
+        "name": "Leaf Ear Bass Bluetooth Headset",
+        "brand": "Leaf",
+        "type": "On the ear",
+        "Noise Cancellation": "no",
+        "rating": 4,
+        "color": "black"
+      }
+    },
+    {
+      "id": 4,
+      "properties": {
+        "sku": "xyz528",
+        "cost": 1000,
+        "name": "boAt Rockerz 508 Bluetooth Headset ",
+        "brand": "boAt",
+        "type": "On the ear",
+        "Noise Cancellation": "no",
+        "rating": 3.8,
+        "color": "blue"
+      }
+    },
+    {
+      "id": 5,
+      "properties": {
+        "sku": "pqr897",
+        "cost": 1500,
+        "name": "boAt Rockerz 510 Super Extra Bass Bluetooth Headset ",
+        "brand": "boAt",
+        "type": "On the ear",
+        "Noise Cancellation": "yes",
+        "rating": 4.5,
+        "color": "black"
+      }
+    }
+  ]
+}
