@@ -5,8 +5,6 @@ function Checkbox(props) {
   const handleChange = (e) => {
     setCheck(e.target.checked);
 
-    console.log(e.target.checked);
-    console.log(check);
     props.addToCompare && props.addToCompare(props.itemId, e.target.checked);
     //updateCounter();
   };

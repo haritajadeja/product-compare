@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 import products from "./../../products.json";
 import { Row, Col } from "react-bootstrap";
 import ItemCard from "../core/ItemCard";
 import { setCompareData } from "./../../utils/compare";
+import actions from "../../actions";
 
-function ProductList() {
+function ProductList(props) {
+  useEffect(() => {
+    props.setProduct(products);
+  }, []);
   let productData = products["products"];
-  const addToCompare = (productId = "") => {
-    setCompareData(productId);
+  const addToCompare = (productId = "", status) => {
+    // setCompareData(productId, status);
+    props.addProductCompare(productId);
     //updateCounter();
   };
   const prepareProductList = () => {
@@ -27,4 +33,11 @@ function ProductList() {
   };
   return <Row>{prepareProductList()}</Row>;
 }
-export default ProductList;
+
+const mapStateToProps = (state) => {};
+const mapDispatchToProps = {
+  setProduct: actions.setProduct,
+  addProductCompare: actions.addProductCompare,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

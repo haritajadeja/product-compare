@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
 import products from "../../products.json";
 import { Row, Col } from "react-bootstrap";
 import { setCompareData, getCompareData } from "../../utils/compare";
+import actions from "../../actions";
 
-function ProductCompare() {
+function ProductCompare(props) {
+  const [productData, setProducts] = useState([]);
+  const { productsToCompare, products } = props;
+
+  useEffect(() => {
+    const ids = productsToCompare;
+    const data = products.filter((obj) => ids.includes(obj.id));
+
+    setProducts(data);
+  }, [productsToCompare]);
   let properties = [
     "sku",
     "cost",
@@ -14,15 +25,8 @@ function ProductCompare() {
     "rating",
     "color",
   ];
-  let productsToCompare = [1, 2, 4, 5]; //getCompareData();
-  let productData = products["products"].filter((obj) =>
-    productsToCompare.includes(obj.id)
-  );
-  console.log(productData);
-  const addToCompare = (productId = "") => {
-    setCompareData(productId);
-    //updateCounter();
-  };
+  // let productData = getCompareData();
+
   const prepareProductList = () => {
     return productData ? (
       <div className="table-responsve">
@@ -61,4 +65,15 @@ function ProductCompare() {
   };
   return <Row>{prepareProductList()}</Row>;
 }
-export default ProductCompare;
+
+const mapStateToProps = (state) => {
+  return {
+    productsToCompare: state.compare,
+    products: state.products,
+  };
+};
+const mapDispatchToProps = {
+  // addProductCompare: actions.addProductCompare,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductCompare);

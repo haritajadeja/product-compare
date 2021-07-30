@@ -1,6 +1,7 @@
 import products from "../products.json";
 
 export function setCompareData(productId, status) {
+  console.log("status is: " + status);
   let compareData = getCompareList();
   if (productId) {
     if (status) {
@@ -22,9 +23,9 @@ export function setCompareData(productId, status) {
 }
 
 export function getCompareData() {
-  localStorage.setItem("compareList", JSON.stringify([1, 2, 3]));
   let ids = getCompareList();
-  return ids;
+  let productData = products["products"].filter((obj) => ids.includes(obj.id));
+  return productData;
 }
 
 function getCompareList() {
