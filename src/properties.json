@@ -1,0 +1,10 @@
+{
+  "properties": [
+    "cost",
+    "brand",
+    "type",
+    "Noise Cancellation",
+    "rating",
+    "color"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "properties": {
+        "sku": "abc456",
+        "cost": 1200,
+        "name": "JBL T450BT Extra Bass Bluetooth Headset",
+        "brand": "JBL",
+        "type": "On the ear",
+        "Noise Cancellation": "yes",
+        "rating": 3.5,
+        "color": "red",
+        "imgsrc": "https://rukminim1.flixcart.com/image/612/612/k51cpe80pkrrdj/headphone-refurbished/y/b/c/c-rockerz-on-ear-510-boat-original-imafn6u7ec8cmk8y.jpeg"
+      }
+    },
+    {
+      "id": 2,
+      "properties": {
+        "sku": "abc787",
+        "cost": 1000,
+        "name": "Boult Audio Thunder Bluetooth Headset,        ",
+        "brand": "Boult",
+        "type": "On the ear",
+        "Noise Cancellation": "no",
+        "rating": 3.2,
+        "color": "black",
+        "imgsrc": "https://rukminim1.flixcart.com/image/612/612/kcp4osw0/headphone/c/4/l/probass-fluid-x-boult-audio-original-imaftrbsrrrm4fdn.jpeg"
+      }
+    },
+    {
+      "id": 3,
+      "properties": {
+        "sku": "xyz223",
+        "cost": 899,
+        "name": "Leaf Ear Bass Bluetooth Headset",
+        "brand": "Leaf",
+        "type": "On the ear",
+        "Noise Cancellation": "no",
+        "rating": 4,
+        "color": "black",
+        "imgsrc": "https://rukminim1.flixcart.com/image/416/416/kfcv6vk0-0/headphone/k/5/1/bass-leaf-ear-original-imafvu6zrneghgzj.jpeg"
+      }
+    },
+    {
+      "id": 4,
+      "properties": {
+        "sku": "xyz528",
+        "cost": 1000,
+        "name": "boAt Rockerz 508 Bluetooth Headset ",
+        "brand": "boAt",
+        "type": "On the ear",
+        "Noise Cancellation": "no",
+        "rating": 3.8,
+        "color": "blue",
+        "imgsrc": "https://rukminim1.flixcart.com/image/612/612/k0vbgy80pkrrdj/headphone/6/b/9/boat-bassheads-900-super-extra-bass-original-imafg96ydu4getz7.jpeg"
+      }
+    },
+    {
+      "id": 5,
+      "properties": {
+        "sku": "pqr897",
+        "cost": 1500,
+        "name": "boAt Rockerz 510 Super Extra Bass Bluetooth Headset ",
+        "brand": "boAt",
+        "type": "On the ear",
+        "Noise Cancellation": "yes",
+        "rating": 4.5,
+        "color": "black",
+        "imgsrc": "https://rukminim1.flixcart.com/image/612/612/k7285u80/headphone/4/3/u/boat-rockerz-370-original-imafpdzhywghfabu.jpeg"
+      }
+    }
+  ]
+}
