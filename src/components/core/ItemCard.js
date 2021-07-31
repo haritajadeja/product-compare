@@ -1,7 +1,9 @@
 import { Card } from "react-bootstrap";
 import Checkbox from "./Checkbox";
 function ItemCard(props) {
-  const item = props.item;
+  const { item, productsToCompare } = props;
+
+  const checked = productsToCompare.includes(item.id);
   return (
     item && (
       <Card style={{ width: "14rem" }}>
@@ -17,13 +19,13 @@ function ItemCard(props) {
           <Card.Text>{item.discription}</Card.Text>
           <Checkbox
             name={"compare" + item.id}
-            checked={false}
+            checked={checked}
             label="Add to Compare"
             itemId={item.id}
             addToCompare={props.addToCompare}
           ></Checkbox>
           <br />
-          <Card.Link href="#">Add to Cart</Card.Link>
+          {/* <Card.Link href="#">Add to Cart</Card.Link> */}
         </Card.Body>
       </Card>
     )

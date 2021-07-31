@@ -7,13 +7,18 @@ import { setCompareData } from "./../../utils/compare";
 import actions from "../../actions";
 
 function ProductList(props) {
+  const { addProductCompare, removeProductCompare, productsToCompare } = props;
   useEffect(() => {
     props.setProduct(products);
   }, []);
   let productData = products["products"];
   const addToCompare = (productId = "", status) => {
     // setCompareData(productId, status);
-    props.addProductCompare(productId);
+    if (status) {
+      addProductCompare(productId);
+    } else {
+      removeProductCompare(productId);
+    }
     //updateCounter();
   };
   const prepareProductList = () => {
@@ -22,7 +27,11 @@ function ProductList(props) {
         {productData.map((item) => {
           return (
             <Col md="3" key={item.id}>
-              <ItemCard item={item} addToCompare={addToCompare}></ItemCard>
+              <ItemCard
+                item={item}
+                addToCompare={addToCompare}
+                productsToCompare={productsToCompare}
+              ></ItemCard>
             </Col>
           );
         })}
@@ -34,10 +43,15 @@ function ProductList(props) {
   return <Row>{prepareProductList()}</Row>;
 }
 
-const mapStateToProps = (state) => {};
+const mapStateToProps = (state) => {
+  return {
+    productsToCompare: state.compare,
+  };
+};
 const mapDispatchToProps = {
   setProduct: actions.setProduct,
   addProductCompare: actions.addProductCompare,
+  removeProductCompare: actions.removeProductCompare,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

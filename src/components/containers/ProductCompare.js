@@ -7,7 +7,11 @@ import actions from "../../actions";
 
 function ProductCompare(props) {
   const [productData, setProducts] = useState([]);
-  const { productsToCompare, products } = props;
+  const { setProductCompare, productsToCompare, products } = props;
+
+  useEffect(() => {
+    setProductCompare();
+  }, []);
 
   useEffect(() => {
     const ids = productsToCompare;
@@ -15,6 +19,7 @@ function ProductCompare(props) {
 
     setProducts(data);
   }, [productsToCompare]);
+
   let properties = [
     "sku",
     "cost",
@@ -25,10 +30,10 @@ function ProductCompare(props) {
     "rating",
     "color",
   ];
-  // let productData = getCompareData();
 
+  const dateLength = productData.length || 0;
   const prepareProductList = () => {
-    return productData ? (
+    return dateLength > 1 ? (
       <div className="table-responsve">
         <table className="table table-striped table-hover">
           <thead>
@@ -60,7 +65,11 @@ function ProductCompare(props) {
         </table>
       </div>
     ) : (
-      <Col md="12">No product found</Col>
+      <Col md="12">
+        {dateLength === 0
+          ? "No producst to compare."
+          : "Add some more products to compare."}
+      </Col>
     );
   };
   return <Row>{prepareProductList()}</Row>;
@@ -73,7 +82,7 @@ const mapStateToProps = (state) => {
   };
 };
 const mapDispatchToProps = {
-  // addProductCompare: actions.addProductCompare,
+  setProductCompare: actions.setProductCompare,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductCompare);

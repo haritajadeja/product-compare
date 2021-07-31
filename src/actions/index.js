@@ -7,14 +7,29 @@ const setProduct = (payload) => {
   };
 };
 
-const addProductCompare = (id) => {
+const addProductCompare = (id = "") => {
   return {
     type: types.ADD_PRODUCT_COMPARE,
     id,
   };
 };
 
+const removeProductCompare = (id = "") => {
+  return {
+    type: types.REMOVE_PRODUCT_COMPARE,
+    id,
+  };
+};
+
+const setProductCompare = () => {
+  return {
+    type: types.SET_PRODUCT_COMPARE,
+  };
+};
+
 export default {
   setProduct,
   addProductCompare,
+  removeProductCompare,
+  setProductCompare,
 };

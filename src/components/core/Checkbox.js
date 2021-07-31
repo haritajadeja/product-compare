@@ -1,6 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 function Checkbox(props) {
-  const [check, setCheck] = useState(props.checked);
+  const { checked } = props;
+  const [check, setCheck] = useState(checked);
+
+  useEffect(() => {
+    setCheck(checked);
+  }, [checked]);
 
   const handleChange = (e) => {
     setCheck(e.target.checked);
