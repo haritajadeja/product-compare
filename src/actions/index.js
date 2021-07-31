@@ -27,9 +27,25 @@ const setProductCompare = () => {
   };
 };
 
+const addProperty = (property = "") => {
+  return {
+    type: types.ADD_COMPARE_PROPERTY,
+    property,
+  };
+};
+
+const removeProperty = (property = "") => {
+  return {
+    type: types.REMOVE_COMPARE_PROPERTY,
+    property,
+  };
+};
+
 export default {
   setProduct,
   addProductCompare,
   removeProductCompare,
   setProductCompare,
+  addProperty,
+  removeProperty,
 };

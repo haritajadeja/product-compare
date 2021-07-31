@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 function Checkbox(props) {
-  const { checked } = props;
+  const { checked, handleOnChange = false } = props;
   const [check, setCheck] = useState(checked);
 
   useEffect(() => {
@@ -10,7 +10,7 @@ function Checkbox(props) {
   const handleChange = (e) => {
     setCheck(e.target.checked);
 
-    props.addToCompare && props.addToCompare(props.itemId, e.target.checked);
+    handleOnChange && handleOnChange(props.id, e.target.checked);
     //updateCounter();
   };
   return (

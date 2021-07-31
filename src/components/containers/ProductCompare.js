@@ -7,7 +7,12 @@ import actions from "../../actions";
 
 function ProductCompare(props) {
   const [productData, setProducts] = useState([]);
-  const { setProductCompare, productsToCompare, products } = props;
+  const {
+    setProductCompare,
+    productsToCompare,
+    products,
+    properties = [],
+  } = props;
 
   useEffect(() => {
     setProductCompare();
@@ -19,17 +24,6 @@ function ProductCompare(props) {
 
     setProducts(data);
   }, [productsToCompare]);
-
-  let properties = [
-    "sku",
-    "cost",
-    "name",
-    "brand",
-    "type",
-    "Noise Cancellation",
-    "rating",
-    "color",
-  ];
 
   const dateLength = productData.length || 0;
   const prepareProductList = () => {
@@ -79,6 +73,7 @@ const mapStateToProps = (state) => {
   return {
     productsToCompare: state.compare,
     products: state.products,
+    properties: state.properties,
   };
 };
 const mapDispatchToProps = {

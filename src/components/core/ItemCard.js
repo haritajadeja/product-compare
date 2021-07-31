@@ -21,8 +21,8 @@ function ItemCard(props) {
             name={"compare" + item.id}
             checked={checked}
             label="Add to Compare"
-            itemId={item.id}
-            addToCompare={props.addToCompare}
+            id={item.id}
+            handleOnChange={props.addToCompare}
           ></Checkbox>
           <br />
           {/* <Card.Link href="#">Add to Cart</Card.Link> */}

@@ -1,0 +1,12 @@
+{
+  "properties": [
+    "sku",
+    "cost",
+    "name",
+    "brand",
+    "type",
+    "Noise Cancellation",
+    "rating",
+    "color"
+  ]
+}

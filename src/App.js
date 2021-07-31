@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Col, Container, Row, Card, Button } from "react-bootstrap";
 import ProductList from "./components/containers/ProductList";
 import ProductCompare from "./components/containers/ProductCompare";
+import SideBar from "./components/containers/SideBar";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               <ProductList />
             </Card.Body>
           </Card>
+          <SideBar />
           <Card>
             <Card.Header>
               <h3>Compare Products</h3>
