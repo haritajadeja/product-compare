@@ -34,18 +34,15 @@ function FilterBar(props) {
   const propertyList = properties
     ? properties.map((item) => {
         return (
-          item !== "name" &&
-          item !== "sku" && (
-            <ListGroup.Item>
-              <Checkbox
-                name={item}
-                checked={compareProperties.includes(item)}
-                label={item}
-                id={item}
-                handleOnChange={handlePropertyChange}
-              ></Checkbox>
-            </ListGroup.Item>
-          )
+          <ListGroup.Item>
+            <Checkbox
+              name={item}
+              checked={compareProperties.includes(item)}
+              label={item}
+              id={item}
+              handleOnChange={handlePropertyChange}
+            ></Checkbox>
+          </ListGroup.Item>
         );
       })
     : "";

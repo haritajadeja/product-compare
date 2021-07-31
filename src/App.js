@@ -4,6 +4,7 @@ import { Col, Container, Row, Card, Button } from "react-bootstrap";
 import ProductList from "./components/containers/ProductList";
 import ProductCompare from "./components/containers/ProductCompare";
 import FilterBar from "./components/containers/FilterBar";
+import Panel from "./components/core/Panel";
 
 function App() {
   return (
@@ -25,24 +26,13 @@ function App() {
           </Card>
         </Col>
         <Col md="10">
-          <Card>
-            <Card.Header>
-              <h3>Headphones</h3>
-            </Card.Header>
-            <Card.Body>
-              <ProductList />
-            </Card.Body>
-          </Card>
-
-          <Card>
-            <Card.Header>
-              <h3>Compare Products</h3>
-            </Card.Header>
-            <Card.Body>
-              <FilterBar />
-              <ProductCompare />
-            </Card.Body>
-          </Card>
+          <Panel heading="Headphones">
+            <ProductList />
+          </Panel>
+          <Panel heading="Compare Products">
+            <FilterBar />
+            <ProductCompare />
+          </Panel>
         </Col>
       </Row>
     </Container>
