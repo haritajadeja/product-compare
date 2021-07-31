@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import products from "../../products.json";
 import { Row, Col } from "react-bootstrap";
-import { setCompareData, getCompareData } from "../../utils/compare";
 import actions from "../../actions";
 
 function ProductCompare(props) {
@@ -28,7 +26,7 @@ function ProductCompare(props) {
   const dateLength = productData.length || 0;
   const prepareProductList = () => {
     return dateLength > 1 ? (
-      <div className="table-responsve">
+      <Col md="12" className="table-responsve">
         <table className="table table-striped table-hover">
           <thead>
             <tr>
@@ -57,7 +55,7 @@ function ProductCompare(props) {
             })}
           </tbody>
         </table>
-      </div>
+      </Col>
     ) : (
       <Col md="12">
         {dateLength === 0

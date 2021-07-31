@@ -41,6 +41,13 @@ const removeProperty = (property = "") => {
   };
 };
 
+const compareAllProperty = (status) => {
+  return {
+    type: types.COMPARE_ALL_PROPERTY,
+    status,
+  };
+};
+
 export default {
   setProduct,
   addProductCompare,
@@ -48,4 +55,5 @@ export default {
   setProductCompare,
   addProperty,
   removeProperty,
+  compareAllProperty,
 };

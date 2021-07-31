@@ -3,24 +3,28 @@ import { connect } from "react-redux";
 import products from "./../../products.json";
 import { Row, Col } from "react-bootstrap";
 import ItemCard from "../core/ItemCard";
-import { setCompareData } from "./../../utils/compare";
 import actions from "../../actions";
 
 function ProductList(props) {
-  const { addProductCompare, removeProductCompare, productsToCompare } = props;
+  const {
+    addProductCompare,
+    removeProductCompare,
+    productsToCompare,
+    productData = [],
+  } = props;
+
   useEffect(() => {
     props.setProduct(products);
   }, []);
-  let productData = products["products"];
+
   const addToCompare = (productId = "", status) => {
-    // setCompareData(productId, status);
     if (status) {
       addProductCompare(productId);
     } else {
       removeProductCompare(productId);
     }
-    //updateCounter();
   };
+
   const prepareProductList = () => {
     return productData ? (
       <React.Fragment>
@@ -46,6 +50,7 @@ function ProductList(props) {
 const mapStateToProps = (state) => {
   return {
     productsToCompare: state.compare,
+    productData: state.products,
   };
 };
 const mapDispatchToProps = {

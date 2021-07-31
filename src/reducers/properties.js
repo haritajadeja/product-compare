@@ -17,7 +17,16 @@ export default (state = initialState, action) => {
       return newState;
       break;
     }
+    case types.COMPARE_ALL_PROPERTY: {
+      const { status } = action;
 
+      if (status) {
+        return initialState;
+      } else {
+        return [];
+      }
+      break;
+    }
     case types.REMOVE_COMPARE_PROPERTY: {
       const newState = [...state];
 
